@@ -1,7 +1,9 @@
-import React from "react";
-import { NavLink } from "react-router";
+import React, { use } from "react";
+import { Link, NavLink } from "react-router";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const Navbar = () => {
+  const {user} = use(AuthContext)
   const links = (
     <>
       <li>
@@ -44,6 +46,8 @@ const Navbar = () => {
           My Posted Tasks
         </NavLink>
       </li>
+      {user ? '' : 
+      <> 
       <li>
         <NavLink
           className={({ isActive }) =>
@@ -64,6 +68,8 @@ const Navbar = () => {
           SignUp
         </NavLink>
       </li>
+      </>
+      }
     </>
   );
   return (
@@ -101,8 +107,9 @@ const Navbar = () => {
          {links}
         </ul>
       </div>
+     
       <div className="navbar-end">
-        <a className="btn">Button</a>
+         {user ? <Link to='/profile'><img className="w-12 h-12 rounded-full" src={user?.photoURL} alt="" /></Link> : '' } 
       </div>
     </div>
   );
