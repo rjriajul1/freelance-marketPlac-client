@@ -1,9 +1,10 @@
 import React, { use } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../contexts/AuthContext';
+import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {
-    const {login} = use(AuthContext);
+    const {login,googleLogin} = use(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -21,11 +22,22 @@ const Login = () => {
             console.log(error.message);
         })
     }
+
+    const handleGoogleLogin = () => {
+      googleLogin()
+      .then(result=>{
+        console.log(result);
+         navigate(location?.state || '/')
+      })
+      .catch(error=>{
+        console.log(error.message);
+      })
+    }
     return (
        <div className="card bg-base-100 w-full mx-auto  mt-10 max-w-lg shrink-0 shadow-2xl">
       <div className="card-body">
         <h1 className="text-3xl font-bold text-center">Login now!</h1>
-        <button className='btn btn-primary text-white'>Login With Google</button>
+        <button onClick={handleGoogleLogin} className='btn btn-primary text-white'><FcGoogle size={24}></FcGoogle>Login With Google</button>
         <form onSubmit={handleLogin} className="fieldset">
           
            
