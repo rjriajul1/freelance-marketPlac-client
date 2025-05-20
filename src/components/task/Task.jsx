@@ -1,0 +1,26 @@
+import React from "react";
+
+const Task = ({ task }) => {
+  console.log(task);
+  const { title, description, date,budget,skill } = task || {};
+  return (
+    <div>
+      <div className="card border bg-base-100 my-10 h-62">
+        <div className="card-body">
+          <div className="mb-2 space-y-3">
+            <h2 className="card-title text-red-500">{title}</h2>
+            <p className="text-gray-500 font-bold">{date}</p>
+          </div>
+          <div className="flex">
+            <p className="font-bold text-gray-500">{budget} taka</p>
+            <p className="font-bold text-gray-500">{skill}</p>
+          </div>
+          <p className="font-bold">{description}</p>
+        
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Task;

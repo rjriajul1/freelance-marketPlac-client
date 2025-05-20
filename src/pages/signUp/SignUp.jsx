@@ -1,10 +1,11 @@
 import React, { use } from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../../contexts/AuthContext';
 
 const SignUp = () => {
 
     const {signUp,profileUpdate} = use(AuthContext)
+    const navigate = useNavigate();
     
 
     const handleSignUp =(e) => {
@@ -18,6 +19,7 @@ const SignUp = () => {
         signUp(email,password)
         .then(result=>{
             console.log(result.user);
+            navigate('/')
 
             // user profile update
             const userProfileData = {

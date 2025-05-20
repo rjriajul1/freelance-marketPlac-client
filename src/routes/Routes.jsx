@@ -17,6 +17,8 @@ export const router = createBrowserRouter([
         children:[
             {
                 index:true,
+                hydrateFallbackElement:<p>loading...</p>,
+                loader:()=> fetch('http://localhost:3000/recentTasks'),
                 Component:Home
             },
             {
