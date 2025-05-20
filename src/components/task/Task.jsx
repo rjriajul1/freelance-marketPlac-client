@@ -1,7 +1,7 @@
 import React from "react";
 
 const Task = ({ task }) => {
-  console.log(task);
+
   const { title, description, date,budget,skill } = task || {};
   return (
     <div>

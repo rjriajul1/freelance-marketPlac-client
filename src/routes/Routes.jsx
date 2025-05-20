@@ -8,6 +8,7 @@ import Login from "../pages/login/Login";
 import SignUp from "../pages/signUp/SignUp";
 import Profile from "../pages/profile/Profile";
 import PrivateRoute from "../private/PrivateRoute";
+import TaskDetails from "../pages/taskDetails/TaskDetails";
 
 
 export const router = createBrowserRouter([
@@ -27,6 +28,8 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'browseTasks',
+                hydrateFallbackElement:<p>loading...</p>,
+                loader: ()=> fetch('http://localhost:3000/allTasks'),
                 Component:BrowseTasks
             },
             {
@@ -44,6 +47,10 @@ export const router = createBrowserRouter([
             {
                 path:'profile',
                 Component:Profile
+            },
+            {
+                path:'taskDetails/:id',
+                element:<PrivateRoute><TaskDetails></TaskDetails></PrivateRoute>
             }
         ]
     }
