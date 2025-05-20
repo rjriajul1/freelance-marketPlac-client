@@ -50,6 +50,8 @@ export const router = createBrowserRouter([
             },
             {
                 path:'taskDetails/:id',
+                hydrateFallbackElement:<p>loading...</p>,
+                loader: ({params})=> fetch(`http://localhost:3000/allTasks/${params.id}`),
                 element:<PrivateRoute><TaskDetails></TaskDetails></PrivateRoute>
             }
         ]

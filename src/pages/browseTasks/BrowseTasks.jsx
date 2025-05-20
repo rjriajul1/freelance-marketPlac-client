@@ -29,7 +29,7 @@ const BrowseTasks = () => {
                   <td className="md:text-[18px]">{task.title}</td>
                   <td className="md:text-[18px]">{task.date}</td>
                   <td className="md:text-[18px]">
-                    <Link to={`/taskDetails/${task._id}`}><button>See Details</button></Link>
+                    <Link to={`/taskDetails/${task._id}`}><button className="btn btn-xs md:btn-md">See Details</button></Link>
                   </td>
                 </tr>
               ))}
