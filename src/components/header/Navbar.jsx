@@ -68,7 +68,7 @@ const Navbar = () => {
   );
   return (
     <div className="navbar bg-base-100 shadow-sm">
-      <div className="navbar-start">
+      <div className="navbar-start p-3">
         <div className="dropdown">
           <div tabIndex={0} role="button" className=" mr-3 lg:hidden hover:bg-amber-200 p-2 rounded-md cursor-pointer">
             <svg
