@@ -14,7 +14,7 @@ const UpdateTask = () => {
     const updateData = Object.fromEntries(formDate.entries());
 
     // update task form db
-    fetch(`http://localhost:3000/myPosted/${task.email}`, {
+    fetch(`https://freelance-task-marketplace-server-omega.vercel.app/myPosted/${task.email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

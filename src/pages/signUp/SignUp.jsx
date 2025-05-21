@@ -33,16 +33,13 @@ const SignUp = () => {
             .catch(error=>{
               console.log(error.message);
             })
-           
-           
+            
         })
         .catch(error=>{
             console.log(error.message);
         })
 
     }
-
-
 
     return (
     <div className="card bg-base-100 w-full mx-auto  mt-10 max-w-lg shrink-0 shadow-2xl">

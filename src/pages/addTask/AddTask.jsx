@@ -13,10 +13,10 @@ const AddTask = () => {
     const form = e.target;
     const formDate = new FormData(form);
     const taskData = Object.fromEntries(formDate.entries());
-    console.log(taskData);
+    // console.log(taskData);
 
     // add to task db
-    fetch("http://localhost:3000/tasks", {
+    fetch("https://freelance-task-marketplace-server-omega.vercel.app/tasks", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -10,7 +10,7 @@ const MyPostedTasks = () => {
   const { user } = use(AuthContext);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/myPosted/${user.email}`)
+    fetch(`https://freelance-task-marketplace-server-omega.vercel.app/myPosted/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setPosts(data);
@@ -29,12 +29,12 @@ const MyPostedTasks = () => {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        fetch(`http://localhost:3000/myPosted/${id}`, {
+        fetch(`https://freelance-task-marketplace-server-omega.vercel.app/myPosted/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => {
-        
+
         if (data.deletedCount) {
           const remaingTask = posts.filter((task) => task._id !== id);
           setPosts(remaingTask);
