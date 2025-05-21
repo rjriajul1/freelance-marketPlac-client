@@ -3,6 +3,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { MdDelete, MdEdit } from "react-icons/md";
 import { BiDialpad } from "react-icons/bi";
 import { Link } from "react-router";
+import Swal from "sweetalert2";
 
 const MyPostedTasks = () => {
   const [posts, setPosts] = useState([]);
@@ -15,6 +16,40 @@ const MyPostedTasks = () => {
         setPosts(data);
       });
   }, [user]);
+
+  const handleDeleteDB = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+
+        fetch(`http://localhost:3000/myPosted/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        
+        if (data.deletedCount) {
+          const remaingTask = posts.filter((task) => task._id !== id);
+          setPosts(remaingTask);
+          Swal.fire({
+          title: "Deleted!",
+          text: "Your post has been deleted.",
+          icon: "success",
+        });
+        }
+      });
+        
+      }
+    });
+    
+  };
 
   return (
     <div>
@@ -45,9 +80,20 @@ const MyPostedTasks = () => {
                   <td className="font-bold text-[16px]">{post.date}</td>
                   <td>
                     <div className="join join-vertical lg:join-horizontal">
-                      <button className="btn join-item"><BiDialpad size={24}/></button>
-                      <Link to={`/updateTask/${post._id}`}><button className="btn join-item"><MdEdit size={24}/></button></Link>
-                      <button className="btn join-item"><MdDelete size={24} color="red"/></button>
+                      <button className="btn join-item">
+                        <BiDialpad size={24} />
+                      </button>
+                      <Link to={`/updateTask/${post._id}`}>
+                        <button className="btn join-item">
+                          <MdEdit size={24} />
+                        </button>
+                      </Link>
+                      <button
+                        onClick={() => handleDeleteDB(post._id)}
+                        className="btn join-item"
+                      >
+                        <MdDelete size={24} color="red" />
+                      </button>
                     </div>
                   </td>
                 </tr>
