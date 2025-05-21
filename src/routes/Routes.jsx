@@ -10,11 +10,17 @@ import Profile from "../pages/profile/Profile";
 import PrivateRoute from "../private/PrivateRoute";
 import TaskDetails from "../pages/taskDetails/TaskDetails";
 import UpdateTask from "../pages/updateTask/UpdateTask";
+import Error from "../error/Error";
+import Navbar from "../components/header/Navbar";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: MainLayout,
+    errorElement: <div>
+        <Navbar/>
+        <Error></Error>
+    </div>,
     children: [
       {
         index: true,
