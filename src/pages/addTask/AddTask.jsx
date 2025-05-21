@@ -25,10 +25,9 @@ const AddTask = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.insertedId) {
-            
+        if (data.data.insertedId) {
           Swal.fire({
-            position: "top-end",
+            position: "top-center",
             icon: "success",
             title: "Your task post added db successfully",
             showConfirmButton: false,

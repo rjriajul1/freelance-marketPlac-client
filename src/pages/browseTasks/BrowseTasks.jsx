@@ -15,7 +15,7 @@ const BrowseTasks = () => {
             <thead className="text-xl">
               <tr>
                 <th>No</th>
-                <th>Name</th>
+                <th>Category</th>
                 <th>title</th>
                 <th>Date</th>
                 <th>Action</th>
