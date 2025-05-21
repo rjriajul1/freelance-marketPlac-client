@@ -2,6 +2,7 @@ import React, { use } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../contexts/AuthContext';
 import { FcGoogle } from 'react-icons/fc';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
     const {login,googleLogin} = use(AuthContext);
@@ -35,6 +36,9 @@ const Login = () => {
     }
     return (
        <div className="card bg-base-100 w-full mx-auto  mt-10 max-w-lg shrink-0 shadow-2xl">
+        <Helmet>
+          <title>freelance MarketPlace || Login</title>
+        </Helmet>
       <div className="card-body">
         <h1 className="text-3xl font-bold text-center">Login now!</h1>
         <button onClick={handleGoogleLogin} className='btn btn-primary text-white'><FcGoogle size={24}></FcGoogle>Login With Google</button>

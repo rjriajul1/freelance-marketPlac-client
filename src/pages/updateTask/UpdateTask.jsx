@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router";
 import Swal from "sweetalert2";
 
 const UpdateTask = () => {
   const task = useLoaderData();
+ 
   const [startDate, setStartDate] = useState(new Date());
 
   const handleUpdateForm = (e) => {
@@ -37,6 +39,9 @@ const UpdateTask = () => {
 
   return (
     <div className="max-w-7xl mx-auto bg-amber-100 rounded-2xl p-6 my-4">
+      <Helmet>
+        <title>freelance MarketPlace || Update {task._id}</title>
+      </Helmet>
       <h1 className="text-center font-bold text-2xl my-4">Update Task</h1>
       <form onSubmit={handleUpdateForm}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

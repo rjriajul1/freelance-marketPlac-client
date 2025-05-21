@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router';
 import FeaturedTasks from '../../components/featuredTasks/FeaturedTasks';
 import SuccessStory from '../../components/successStory/SuccessStory';
 import Services from '../../components/services/Services';
+import { Helmet } from 'react-helmet-async';
 const Home = () => {
 
     const tasksData = useLoaderData();
@@ -11,6 +12,9 @@ const Home = () => {
   
     return (
         <div>
+            <Helmet>
+                <title>freelance MarketPlace || Home</title>
+            </Helmet>
             <Banner/>
             <FeaturedTasks tasksData={tasksData}/>
             <SuccessStory/>

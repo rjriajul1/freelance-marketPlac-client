@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router";
 
 const BrowseTasks = () => {
@@ -6,6 +7,9 @@ const BrowseTasks = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>freelance MarketPlace || Browser Tasks</title>
+      </Helmet>
       <h1 className="text-3xl font-bold text-red-500 text-center my-6">
         All Tasks Post here so at a glance
       </h1>

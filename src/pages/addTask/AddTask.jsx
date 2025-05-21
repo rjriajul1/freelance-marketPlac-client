@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../../contexts/AuthContext";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const AddTask = () => {
   const { user } = use(AuthContext);
@@ -40,6 +41,9 @@ const AddTask = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>freelance MarketPlace || Add Task</title>
+      </Helmet>
       <div className="max-w-7xl mx-auto bg-amber-100 rounded-2xl p-6 my-4">
         <h1 className="text-center font-bold text-2xl my-4">Add Task</h1>
         <form onSubmit={handleFormAddTasks}>

@@ -4,6 +4,7 @@ import { MdDelete, MdEdit } from "react-icons/md";
 import { BiDialpad } from "react-icons/bi";
 import { Link } from "react-router";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const MyPostedTasks = () => {
   const [posts, setPosts] = useState([]);
@@ -53,6 +54,9 @@ const MyPostedTasks = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>freelance MarketPlace || My Posted Tasks</title>
+      </Helmet>
       <h1 className="text-3xl font-bold text-center my-6">
         My posted Tasks: {posts.length}
       </h1>
@@ -62,7 +66,7 @@ const MyPostedTasks = () => {
           <table className="table">
             {/* head */}
             <thead className="text-xl">
-              <tr>
+              <tr className="">
                 <th>No</th>
                 <th>Category</th>
                 <th>title</th>

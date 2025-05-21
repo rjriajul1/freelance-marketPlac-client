@@ -1,6 +1,7 @@
 import React, { use } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../../contexts/AuthContext';
+import { Helmet } from 'react-helmet-async';
 
 const SignUp = () => {
 
@@ -43,6 +44,9 @@ const SignUp = () => {
 
     return (
     <div className="card bg-base-100 w-full mx-auto  mt-10 max-w-lg shrink-0 shadow-2xl">
+      <Helmet>
+        <title>freelance MarketPlace || Sign Up</title>
+      </Helmet>
       <div className="card-body">
         <h1 className="text-3xl font-bold text-center">Sign Up now!</h1>
         <button className='btn btn-primary text-white'>Login With Google</button>
