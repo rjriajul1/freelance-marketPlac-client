@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Custom Website Design",
+    "freelancer": "Maya Singhania",
+    "rating": 5,
+    "price": "$400",
+    "description": "Responsive, SEO-optimized websites tailored to your brand.",
+    "category": "Web Design"
+  },
+  {
+    "id": 2,
+    "title": "Mobile App UI/UX Design",
+    "freelancer": "Fatima Khan",
+    "rating": 4.9,
+    "price": "$300",
+    "description": "Clean and user-friendly mobile app designs for iOS and Android.",
+    "category": "UI/UX"
+  },
+  {
+    "id": 3,
+    "title": "Logo & Branding Package",
+    "freelancer": "Sara Lee",
+    "rating": 4.95,
+    "price": "$200",
+    "description": "Complete logo, color palette, and typography guide for your brand.",
+    "category": "Graphic Design"
+  },
+  {
+    "id": 4,
+    "title": "SEO Content Writing",
+    "freelancer": "Ali Hassan",
+    "rating": 4.8,
+    "price": "$150",
+    "description": "High-quality blog posts and articles optimized for Google.",
+    "category": "Writing"
+  },
+  {
+    "id": 5,
+    "title": "WordPress E-commerce Setup",
+    "freelancer": "John Doe",
+    "rating": 5,
+    "price": "$350",
+    "description": "Launch your online store with WooCommerce and a custom theme.",
+    "category": "Web Development"
+  },
+  {
+    "id": 6,
+    "title": "Professional Video Editing",
+    "freelancer": "Omar Reza",
+    "rating": 4.9,
+    "price": "$250",
+    "description": "Smooth cuts, transitions, and audio sync for any video type.",
+    "category": "Video Editing"
+  },
+  {
+    "id": 7,
+    "title": "React Front-End Development",
+    "freelancer": "Lina Park",
+    "rating": 4.95,
+    "price": "$500",
+    "description": "Interactive, scalable front-end applications built with React.",
+    "category": "Frontend Development"
+  },
+  {
+    "id": 8,
+    "title": "Facebook & Instagram Ad Campaign",
+    "freelancer": "Maya Singhania",
+    "rating": 4.85,
+    "price": "$300",
+    "description": "Data-driven ad campaigns with detailed analytics and A/B testing.",
+    "category": "Digital Marketing"
+  },
+  {
+    "id": 9,
+    "title": "3D Product Modeling",
+    "freelancer": "Ravi Prakash",
+    "rating": 4.9,
+    "price": "$400",
+    "description": "Realistic 3D models for products, packaging, or concept visualization.",
+    "category": "3D Modeling"
+  },
+  {
+    "id": 10,
+    "title": "Python Script Automation",
+    "freelancer": "Carlos Alvarez",
+    "rating": 5,
+    "price": "$350",
+    "description": "Automate boring tasks or data processing with clean Python scripts.",
+    "category": "Programming"
+  }
+]

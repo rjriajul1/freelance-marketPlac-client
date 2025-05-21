@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Story from '../story/Story';
 
 const SuccessStory = () => {
-    const [stories,setStories] = useState();
+    const [stories,setStories] = useState([]);
     useEffect(()=>{
         fetch('/stories.json')
         .then(res=>res.json())
