@@ -33,6 +33,7 @@ const AddTask = () => {
             showConfirmButton: false,
             timer: 1500,
           });
+          form.reset();
         }
       });
   };

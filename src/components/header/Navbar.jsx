@@ -2,8 +2,11 @@ import React, { use } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../contexts/AuthContext";
 
+
+
 const Navbar = () => {
   const {user} = use(AuthContext)
+  
   const links = (
     <>
       <li>
@@ -107,8 +110,10 @@ const Navbar = () => {
          {links}
         </ul>
       </div>
+      
      
       <div className="navbar-end">
+    
          {user ? <Link to='/profile'><img className="w-12 h-12 rounded-full" src={user?.photoURL} alt="" /></Link> : '' } 
       </div>
     </div>

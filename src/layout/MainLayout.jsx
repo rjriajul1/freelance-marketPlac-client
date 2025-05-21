@@ -8,7 +8,9 @@ const MainLayout = () => {
   const isNavigating = Boolean(navigation.location);
   return (
     <div>
-      <Navbar></Navbar>
+     <div className="sticky top-0 z-10">
+       <Navbar></Navbar>
+     </div>
       <div className=" min-h-[calc(100vh-412px)]">
         {isNavigating && (
           <div>

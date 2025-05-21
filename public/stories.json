@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "client": "Anna Smith",
+    "freelancer": "John Doe",
+    "project": "E-commerce Website Development",
+    "quote": "John was incredible! Delivered on time with amazing quality. I now have a fully functioning store!",
+    "result": "Website launched in 3 weeks, 25% increase in sales",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "client": "TechNova Inc.",
+    "freelancer": "Fatima Khan",
+    "project": "Mobile App UI/UX Design",
+    "quote": "Fatima's design brought our app to life. Users love the clean layout!",
+    "result": "Increased app retention by 40%",
+    "rating": 4.8
+  },
+  {
+    "id": 3,
+    "client": "Mark Patel",
+    "freelancer": "Sara Lee",
+    "project": "Logo & Brand Identity",
+    "quote": "Sara nailed the branding from day one. Professional, modern, and memorable!",
+    "result": "New brand increased customer engagement by 30%",
+    "rating": 4.9
+  },
+  {
+    "id": 4,
+    "client": "EduQuest Ltd.",
+    "freelancer": "Carlos Alvarez",
+    "project": "Learning Management System (LMS)",
+    "quote": "Carlos built us a custom LMS that’s both scalable and user-friendly. Very happy with the result.",
+    "result": "Trained 1,200+ users in the first month",
+    "rating": 5
+  },
+  {
+    "id": 5,
+    "client": "Jane Doe",
+    "freelancer": "Maya Singhania",
+    "project": "Social Media Marketing Campaign",
+    "quote": "Maya boosted our Instagram following by thousands in just weeks. Impressive work!",
+    "result": "Gained 12,000 new followers in 30 days",
+    "rating": 4.7
+  },
+  {
+    "id": 6,
+    "client": "PixelFrame Studios",
+    "freelancer": "Omar Reza",
+    "project": "Video Editing & Post-Production",
+    "quote": "Omar’s editing skills are top-tier. The final product looked like something from a pro studio.",
+    "result": "Video reached 100K+ views in first week",
+    "rating": 4.9
+  },
+  {
+    "id": 7,
+    "client": "GreenGrow Farm Co.",
+    "freelancer": "Lina Park",
+    "project": "Custom WordPress Website",
+    "quote": "Lina was super responsive and delivered a site that’s fast and easy to update. Highly recommend!",
+    "result": "Website bounce rate dropped by 35%",
+    "rating": 5
+  },
+  {
+    "id": 8,
+    "client": "David Chen",
+    "freelancer": "Ali Hassan",
+    "project": "SEO Optimization for Blog",
+    "quote": "Ali’s SEO strategy helped my blog get on the first page of Google in just two months.",
+    "result": "Organic traffic grew by 300%",
+    "rating": 4.8
+  },
+  {
+    "id": 9,
+    "client": "VividApp Labs",
+    "freelancer": "Emily Tran",
+    "project": "Cross-platform Mobile App Development",
+    "quote": "Emily developed our MVP in record time and with flawless functionality.",
+    "result": "Beta launch achieved with zero critical bugs",
+    "rating": 5
+  },
+  {
+    "id": 10,
+    "client": "Skyline Architecture",
+    "freelancer": "Ravi Prakash",
+    "project": "3D Rendering for Building Proposal",
+    "quote": "Ravi brought our vision to life with stunning detail. Investors were blown away.",
+    "result": "Secured $2M in project funding after presentation",
+    "rating": 4.95
+  }
+]
