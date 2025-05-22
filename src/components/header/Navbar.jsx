@@ -113,6 +113,7 @@ const Navbar = () => {
       
      
       <div className="navbar-end">
+        
     
          {user ? <Link to='/profile'><img className="w-12 h-12 rounded-full" src={user?.photoURL} alt="" /></Link> : '' } 
       </div>

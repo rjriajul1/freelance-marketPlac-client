@@ -2,6 +2,7 @@ import React, { use } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../../contexts/AuthContext';
 import { Helmet } from 'react-helmet-async';
+import { toast } from 'react-toastify';
 
 const SignUp = () => {
 
@@ -17,6 +18,19 @@ const SignUp = () => {
         // const email = e.target.email.value;
         // const password = e.target.password.value;
       // console.log(name,photo);
+      if(!/^(?=.*[a-z])/.test(password)){
+        toast("this password inside must be one character lower case");
+        return;
+      }
+
+      if(!/^(?=.*[A-Z])/.test(password)){
+        toast("this password inside must be one character Uppercase case!");
+        return;
+      }
+      if(password.length < 6){
+        toast("password at least 6 characters or geater than longer!");
+        return;
+      }
         signUp(email,password)
         .then(result=>{
             console.log(result.user);
