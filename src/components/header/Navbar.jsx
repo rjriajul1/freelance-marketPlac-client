@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { use, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../contexts/AuthContext";
 
@@ -6,13 +6,28 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 const Navbar = () => {
   const {user} = use(AuthContext)
+
+  const [theme,setTheme] = useState("light-theme")
+
+  const toggleTheme = () => {
+
+    if(theme === "dark-theme"){
+      setTheme("light-theme")
+    }else{
+      setTheme("dark-theme")
+    }
+ 
+  }
+  useEffect(()=>{
+    document.body.className = theme
+  },[theme])
   
   const links = (
     <>
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-blue-500 underline" : ""
+            isActive ? "underline" : ""
           }
           to="/"
         >
@@ -22,7 +37,7 @@ const Navbar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-blue-500 underline" : ""
+            isActive ? "underline" : ""
           }
           to="/addTask"
         >
@@ -32,7 +47,7 @@ const Navbar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-blue-500 underline" : ""
+            isActive ? " underline" : ""
           }
           to="/browseTasks"
         >
@@ -42,7 +57,7 @@ const Navbar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-blue-500 underline" : ""
+            isActive ? " underline" : ""
           }
           to="/myPostedTasks"
         >
@@ -54,7 +69,7 @@ const Navbar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-blue-500 underline" : ""
+            isActive ? " underline" : ""
           }
           to="/login"
         >
@@ -64,7 +79,7 @@ const Navbar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-blue-500 underline" : ""
+            isActive ? "underline" : ""
           }
           to="/signUp"
         >
@@ -76,7 +91,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar nav bg-base-100 shadow-sm">
       <div className="navbar-start p-3">
         <div className="dropdown">
           <div tabIndex={0} role="button" className=" mr-3 lg:hidden hover:bg-amber-200 p-2 rounded-md cursor-pointer">
@@ -98,7 +113,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu nav menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
           {links}
           </ul>
@@ -113,8 +128,7 @@ const Navbar = () => {
       
      
       <div className="navbar-end">
-        
-    
+        <p className="mr-4 btn" onClick={()=>toggleTheme()}><input type="checkbox" defaultChecked className="toggle" /></p>
          {user ? <Link to='/profile'><img className="w-12 h-12 rounded-full" src={user?.photoURL} alt="" /></Link> : '' } 
       </div>
     </div>

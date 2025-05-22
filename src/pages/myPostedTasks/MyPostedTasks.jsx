@@ -66,23 +66,23 @@ const MyPostedTasks = () => {
           <table className="table">
             {/* head */}
             <thead className="text-xl">
-              <tr className="">
-                <th>No</th>
-                <th>Category</th>
-                <th>title</th>
-                <th>date</th>
-                <th>Action</th>
+              <tr className="browse-task">
+                <th className="border">No</th>
+                <th className="border">Category</th>
+                <th className="border">title</th>
+                <th className="border">date</th>
+                <th className="border">Action</th>
               </tr>
             </thead>
             <tbody>
               {/* row 1 */}
               {posts.map((post, index) => (
                 <tr key={post._id}>
-                  <th>{index + 1}</th>
-                  <td className="font-bold text-[16px]">{post.skill}</td>
-                  <td className="font-bold text-[16px]">{post.title}</td>
-                  <td className="font-bold text-[16px]">{post.date}</td>
-                  <td>
+                  <th className="border">{index + 1}</th>
+                  <td className="font-bold text-[16px] border">{post.skill}</td>
+                  <td className="font-bold text-[16px] border">{post.title}</td>
+                  <td className="font-bold text-[16px] border">{post.date}</td>
+                  <td className="border">
                     <div className="join join-vertical lg:join-horizontal">
                       <button className="btn join-item">
                         <BiDialpad size={24} />

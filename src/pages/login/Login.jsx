@@ -31,7 +31,7 @@ const Login = () => {
       .then(result=>{
         console.log(result);
          navigate(location?.state || '/')
-         toast.success('you login with google successfully')
+         toast.success('your login with google successfully')
       })
       .catch(error=>{
         toast.error(error.message);

@@ -3,10 +3,11 @@ import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../../contexts/AuthContext';
 import { Helmet } from 'react-helmet-async';
 import { toast } from 'react-toastify';
+import { FcGoogle } from 'react-icons/fc';
 
 const SignUp = () => {
 
-    const {signUp,profileUpdate} = use(AuthContext)
+    const {signUp,profileUpdate,googleLogin} = use(AuthContext)
     const navigate = useNavigate();
     
 
@@ -55,6 +56,17 @@ const SignUp = () => {
         })
 
     }
+    const handleGoogleLogin = () => {
+          googleLogin()
+          .then(result=>{
+            console.log(result);
+             navigate(location?.state || '/')
+             toast.success('your login with google successfully')
+          })
+          .catch(error=>{
+            toast.error(error.message);
+          })
+        }
 
     return (
     <div className="card bg-base-100 w-full mx-auto  mt-10 max-w-lg shrink-0 shadow-2xl">
@@ -63,7 +75,7 @@ const SignUp = () => {
       </Helmet>
       <div className="card-body">
         <h1 className="text-3xl font-bold text-center">Sign Up now!</h1>
-        <button className='btn btn-primary text-white'>Login With Google</button>
+        <button onClick={handleGoogleLogin} className='btn btn-primary text-white'><FcGoogle size={24}></FcGoogle>Login With Google</button>
         <form onSubmit={handleSignUp} className="fieldset">
             {/* name */}
           <label className="label">Name</label>

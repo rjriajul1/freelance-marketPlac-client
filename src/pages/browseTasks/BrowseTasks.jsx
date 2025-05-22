@@ -6,7 +6,7 @@ const BrowseTasks = () => {
   const allTasks = useLoaderData();
 
   return (
-    <div>
+    <div className="">
       <Helmet>
         <title>freelance MarketPlace || Browser Tasks</title>
       </Helmet>
@@ -16,23 +16,23 @@ const BrowseTasks = () => {
       <div>
         <div className="overflow-x-auto my-6">
           <table className="table table-xs">
-            <thead className="text-xl">
-              <tr>
-                <th>No</th>
-                <th>Category</th>
-                <th>title</th>
-                <th>Date</th>
-                <th>Action</th>
+            <thead className="text-xl border">
+              <tr className="browse-task">
+                <th className="border">No</th>
+                <th className="border">Category</th>
+                <th className="border">title</th>
+                <th className="border">Date</th>
+                <th className="border">Action</th>
               </tr>
             </thead>
             <tbody className="font-bold  ">
               {allTasks.map((task, index) => (
                 <tr key={task._id}>
-                  <th>{index + 1}</th>
-                  <td className="md:text-[18px]">{task.skill}</td>
-                  <td className="md:text-[18px]">{task.title}</td>
-                  <td className="md:text-[18px]">{task.date}</td>
-                  <td className="md:text-[18px]">
+                  <th className="border">{index + 1}</th>
+                  <td className="md:text-[18px] border">{task.skill}</td>
+                  <td className="md:text-[18px] border">{task.title}</td>
+                  <td className="md:text-[18px] border">{task.date}</td>
+                  <td className="md:text-[18px] border">
                     <Link to={`/taskDetails/${task._id}`}><button className="btn btn-xs md:btn-md">See Details</button></Link>
                   </td>
                 </tr>

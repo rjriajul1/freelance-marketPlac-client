@@ -12,13 +12,15 @@ const SuccessStory = () => {
    
     return (
 
-        <div className='max-w-7xl mx-auto py-6'>
+       <div className='success-section mt-2'>
+         <div className='max-w-7xl mx-auto py-6'>
 
              <h1 className='text-3xl font-bold'>Success Story</h1>
              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-2'>
                {stories?.map(story=><Story key={story.id} story={story}></Story>)}
              </div>
         </div>
+       </div>
     );
 };
 
