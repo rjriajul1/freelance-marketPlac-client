@@ -1,4 +1,41 @@
 # React + Vite
+# Freelance Marketplace Website
+
+Welcome to the **Freelance Marketplace Website** – a platform that connects freelancers with clients worldwide. This project enables users to post jobs, hire talent, and manage freelance work easily and securely.
+
+## 🚀 Project Overview
+
+This freelance marketplace allows:
+- **Clients** to post jobs, review freelancer profiles, and hire professionals.
+- **Freelancers**
+
+Whether you're a business owner looking for experts or a freelancer searching for projects, this platform provides a seamless experience.
+
+## 🌟 Features
+
+- User authentication (login/signUp)
+- Job posting and application system
+- Project tracking and status updates
+- Review and rating system
+- user update their post
+
+
+## 🛠️ Tech Stack
+
+**Frontend:**
+- React.js
+- Tailwind CSS 
+
+
+**Backend:**
+- Node.js with Express
+- MongoDB
+- JWT for authentication
+
+## 🔧 Live Link
+``` URL: https://freelance-marketplace-46e7c.web.app/
+
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

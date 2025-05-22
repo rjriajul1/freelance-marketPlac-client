@@ -17,15 +17,20 @@ export const router = createBrowserRouter([
   {
     path: "/",
     Component: MainLayout,
-    errorElement: <div>
-        <Navbar/>
+    errorElement: (
+      <div>
+        <Navbar />
         <Error></Error>
-    </div>,
+      </div>
+    ),
     children: [
       {
         index: true,
         hydrateFallbackElement: <p>loading...</p>,
-        loader: () => fetch("https://freelance-task-marketplace-server-omega.vercel.app/recentTasks"),
+        loader: () =>
+          fetch(
+            "https://freelance-task-marketplace-server-omega.vercel.app/recentTasks"
+          ),
         Component: Home,
       },
       {
@@ -39,7 +44,10 @@ export const router = createBrowserRouter([
       {
         path: "browseTasks",
         hydrateFallbackElement: <p>loading...</p>,
-        loader: () => fetch("https://freelance-task-marketplace-server-omega.vercel.app/allTasks"),
+        loader: () =>
+          fetch(
+            "https://freelance-task-marketplace-server-omega.vercel.app/allTasks"
+          ),
         Component: BrowseTasks,
       },
       {
@@ -66,7 +74,9 @@ export const router = createBrowserRouter([
         path: "taskDetails/:id",
         hydrateFallbackElement: <p>loading...</p>,
         loader: ({ params }) =>
-          fetch(`https://freelance-task-marketplace-server-omega.vercel.app/allTasks/${params.id}`),
+          fetch(
+            `https://freelance-task-marketplace-server-omega.vercel.app/allTasks/${params.id}`
+          ),
         element: (
           <PrivateRoute>
             <TaskDetails></TaskDetails>
@@ -77,7 +87,9 @@ export const router = createBrowserRouter([
         path: "updateTask/:id",
         hydrateFallbackElement: <p>loading...</p>,
         loader: ({ params }) =>
-          fetch(`https://freelance-task-marketplace-server-omega.vercel.app/allTasks/${params.id}`),
+          fetch(
+            `https://freelance-task-marketplace-server-omega.vercel.app/allTasks/${params.id}`
+          ),
         element: (
           <PrivateRoute>
             <UpdateTask></UpdateTask>
