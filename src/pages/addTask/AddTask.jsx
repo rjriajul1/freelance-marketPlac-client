@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { use} from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -7,14 +7,14 @@ import { Helmet } from "react-helmet-async";
 
 const AddTask = () => {
   const { user } = use(AuthContext);
-  const [startDate, setStartDate] = useState(new Date());
+  // const [startDate, setStartDate] = useState(new Date());
 
   const handleFormAddTasks = (e) => {
     e.preventDefault();
     const form = e.target;
     const formDate = new FormData(form);
     const taskData = Object.fromEntries(formDate.entries());
-    // console.log(taskData);
+    console.log(taskData);
 
     // add to task db
     fetch("https://freelance-task-marketplace-server-omega.vercel.app/tasks", {
@@ -86,17 +86,10 @@ const AddTask = () => {
 
             <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full border p-4">
               {/* deadline */}
+   
+   
               <label className="label text-xl font-bold">deadline</label>
-
-              <div className="w-full border border-gray-300 p-1 rounded-md ">
-                <DatePicker
-                  name="date"
-                  className="w-full"
-                  showIcon
-                  selected={startDate}
-                  onChange={(date) => setStartDate(date)}
-                />
-              </div>
+                <input type="date" name="date" className="input w-full" />
             </fieldset>
 
             <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full border p-4">

@@ -61,6 +61,7 @@ const UpdateTask = () => {
             {/* category */}
             <label className="label text-xl font-bold">category</label>
             <select
+            defaultValue={task.skill}
               className="p-2 font-bold w-full border border-gray-300 rounded-md  "
               name="skill"
               id="jobs"
@@ -87,14 +88,15 @@ const UpdateTask = () => {
             {/* deadline */}
             <label className="label text-xl font-bold">deadline</label>
 
+
             <div className="w-full border border-gray-300 p-1 rounded-md ">
               <DatePicker
                 name="date"
                 className="w-full"
-                defaultValue={task.date}
                 showIcon
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
+                defaultValue={task.date}
               />
             </div>
           </fieldset>

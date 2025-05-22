@@ -1,4 +1,5 @@
 import React from "react";
+import { Typewriter } from "react-simple-typewriter";
 
 const Task = ({ task }) => {
 
@@ -15,7 +16,13 @@ const Task = ({ task }) => {
             <p className="font-bold text-gray-500">{budget} taka</p>
             <p className="font-bold text-gray-500">{skill}</p>
           </div>
-          <p className="font-bold">{description}</p>
+          <p className="font-bold text-green-500">
+            <Typewriter 
+            words={[`${description}`]}
+             loop={0}
+            typeSpeed={90}
+            delaySpeed={30}
+            /></p>
         
         </div>
       </div>
