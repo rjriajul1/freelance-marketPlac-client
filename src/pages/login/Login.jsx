@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../contexts/AuthContext';
 import { FcGoogle } from 'react-icons/fc';
 import { Helmet } from 'react-helmet-async';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const {login,googleLogin} = use(AuthContext);
@@ -18,9 +19,10 @@ const Login = () => {
         .then(result=>{
             console.log(result.user);
             navigate(location?.state || '/')
+            toast.success('your login successfully now !')
         })
         .catch(error=>{
-            console.log(error.message);
+            toast.error(error.message);
         })
     }
 
@@ -29,9 +31,10 @@ const Login = () => {
       .then(result=>{
         console.log(result);
          navigate(location?.state || '/')
+         toast.success('you login with google successfully')
       })
       .catch(error=>{
-        console.log(error.message);
+        toast.error(error.message);
       })
     }
     return (

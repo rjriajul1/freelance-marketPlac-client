@@ -19,23 +19,23 @@ const SignUp = () => {
         // const password = e.target.password.value;
       // console.log(name,photo);
       if(!/^(?=.*[a-z])/.test(password)){
-        toast("this password inside must be one character lower case");
+        toast.error("this password inside must be one character lower case");
         return;
       }
 
       if(!/^(?=.*[A-Z])/.test(password)){
-        toast("this password inside must be one character Uppercase case!");
+        toast.error("this password inside must be one character Uppercase case!");
         return;
       }
       if(password.length < 6){
-        toast("password at least 6 characters or geater than longer!");
+        toast.error("password at least 6 characters or geater than longer!");
         return;
       }
         signUp(email,password)
         .then(result=>{
             console.log(result.user);
             navigate('/')
-
+            toast.success('your successfully Sing Up')
             // user profile update
             const userProfileData = {
               displayName: name,
@@ -46,12 +46,12 @@ const SignUp = () => {
               console.log(result);
             })
             .catch(error=>{
-              console.log(error.message);
+              toast.error(error.message);
             })
             
         })
         .catch(error=>{
-            console.log(error.message);
+           toast.error(error.message);
         })
 
     }
