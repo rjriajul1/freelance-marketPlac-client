@@ -1,14 +1,17 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../../contexts/AuthContext';
 import { Helmet } from 'react-helmet-async';
 import { toast } from 'react-toastify';
 import { FcGoogle } from 'react-icons/fc';
+import { FaRegEye } from 'react-icons/fa';
+import { IoIosEyeOff } from 'react-icons/io';
 
 const SignUp = () => {
 
     const {signUp,profileUpdate,googleLogin} = use(AuthContext)
     const navigate = useNavigate();
+    const [showPass, setShowPass] = useState(false);
     
 
     const handleSignUp =(e) => {
@@ -69,7 +72,7 @@ const SignUp = () => {
         }
 
     return (
-    <div className="card bg-base-100 w-full mx-auto  mt-10 max-w-lg shrink-0 shadow-2xl">
+    <div className="card  w-full mx-auto  mt-10 max-w-lg shrink-0 shadow-2xl">
       <Helmet>
         <title>freelance MarketPlace || Sign Up</title>
       </Helmet>
@@ -79,19 +82,24 @@ const SignUp = () => {
         <form onSubmit={handleSignUp} className="fieldset">
             {/* name */}
           <label className="label">Name</label>
-          <input type="name" name='name' className="input w-full" placeholder="Name" />
+          <input type="name" name='name' className="p-2 border w-full" placeholder="Name" />
             {/* photo */}
           <label className="label">Photo</label>
-          <input type="text" name='photo' className="input w-full" placeholder="Photo URL" />
+          <input type="text" name='photo' className="p-2 border w-full" placeholder="Photo URL" />
             {/* email */}
           <label className="label">Email</label>
-          <input type="email" name='email' className="input w-full" placeholder="Email" />
+          <input type="email" name='email' className="p-2 border w-full" placeholder="Email" />
          
           {/* password */}
           <label className="label">Password</label>
-          <input type="password" name='password' className="input w-full" placeholder="Password" />
+          <div className='relative'>
+            <input type={showPass ? 'text' : 'password'} name='password' className="border p-2 w-full" placeholder="Password" />
+           <div onClick={()=> setShowPass(!showPass)} className='absolute top-2 right-4'>
+             {showPass ? <IoIosEyeOff size={20} /> : <FaRegEye size={20} />}
+           </div>
+          </div>
 
-          <button className="btn btn-neutral mt-4">Sing Up</button>
+          <button className="btn mt-4">Sing Up</button>
           <p className='text-center text-xl'>Already have an account? Please <Link className='text-blue-500 underline' to='/login'>Login</Link></p>
         </form>
       </div>

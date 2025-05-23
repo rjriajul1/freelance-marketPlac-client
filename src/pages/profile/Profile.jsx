@@ -17,7 +17,7 @@ const Profile = () => {
                 <title>freelance MarketPlace || Profile</title>
             </Helmet>
             <div></div>
-            {user && <div className='bg-amber-200 p-10  rounded-2xl'>
+            {user && <div className=' border p-10  rounded-2xl'>
                 <h1>name:<span className='font-bold'> {user?.displayName}</span></h1>
                 <button onClick={handleSignOut} className='btn  bg-amber-400 my-4'>Log Out</button>
                

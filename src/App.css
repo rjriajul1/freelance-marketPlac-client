@@ -1,8 +1,5 @@
 
-/* html {
-    font-size: 62.5%;
-    font-family: sans-serif;
-} */
+
 .dark-theme{
     --main-heading: #5f99be;
     --para-clr: #fff;
@@ -22,6 +19,7 @@
 .nav{
     background-color: var(--btn-bg-color);
     color: var(--bg-clr);
+   
 }
 .custom-card{
     background-color: var(--btn-bg-color);
@@ -70,24 +68,6 @@
     background-color: var(--btn-bg-color);
     color: var(--btn-text-clr);
 }
-
-/* .para{
-    color: var(--para-clr);
-} */
-
-
-
-/* li{
-    color: var(--btn-bg-color);
-    background-color: white;
-} */
-
-
-
-/* section {
-    max-width: 100%;
-    background-color: var(--bg-clr);
-} */
 
 
 

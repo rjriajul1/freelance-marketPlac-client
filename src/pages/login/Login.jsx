@@ -1,14 +1,17 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../contexts/AuthContext';
 import { FcGoogle } from 'react-icons/fc';
 import { Helmet } from 'react-helmet-async';
 import { toast } from 'react-toastify';
+import { IoIosEyeOff } from 'react-icons/io';
+import { FaRegEye } from 'react-icons/fa';
 
 const Login = () => {
     const {login,googleLogin} = use(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
+    const [showPass, setShowPass ] = useState(false);
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -38,7 +41,7 @@ const Login = () => {
       })
     }
     return (
-       <div className="card bg-base-100 w-full mx-auto  mt-10 max-w-lg shrink-0 shadow-2xl">
+       <div className="card  w-full mx-auto  mt-10 max-w-lg shrink-0 shadow-2xl">
         <Helmet>
           <title>freelance MarketPlace || Login</title>
         </Helmet>
@@ -50,13 +53,18 @@ const Login = () => {
            
             {/* email */}
           <label className="label">Email</label>
-          <input type="email" name='email' className="input w-full" placeholder="Email" />
+          <input type="email" name='email' className="p-2 border w-full" placeholder="Email" />
          
           {/* password */}
           <label className="label">Password</label>
-          <input type="password" name='password' className="input w-full" placeholder="Password" />
+         <div className='relative'>
+           <input type={showPass ? 'text' : 'password'} name='password' className="p-2 border w-full" placeholder="Password" />
+           <div onClick={()=> setShowPass(!showPass)} className='absolute top-2 right-4'>
+             {showPass ? <IoIosEyeOff size={20} /> : <FaRegEye size={20} />}
+           </div>
+         </div>
 
-          <button className="btn btn-neutral mt-4">Login</button>
+          <button className="btn mt-4">Login</button>
           <p className='text-center text-xl'>Don't have an account? Please <Link className='text-blue-500 underline' to='/signUp'>SignUp</Link></p>
         </form>
       </div>
