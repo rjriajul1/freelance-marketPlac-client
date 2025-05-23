@@ -12,6 +12,7 @@ import TaskDetails from "../pages/taskDetails/TaskDetails";
 import UpdateTask from "../pages/updateTask/UpdateTask";
 import Error from "../error/Error";
 import Navbar from "../components/header/Navbar";
+import Bids from "../pages/bids/Bids";
 
 export const router = createBrowserRouter([
   {
@@ -71,6 +72,15 @@ export const router = createBrowserRouter([
         Component: Profile,
       },
       {
+        path: 'bids/:id',
+        hydrateFallbackElement: <p>loading...</p>,
+        loader: ({params}) =>
+          fetch(
+            `https://freelance-task-marketplace-server-omega.vercel.app/allTasks/${params.id}`
+          ),
+        Component: Bids
+      },
+      {
         path: "taskDetails/:id",
         hydrateFallbackElement: <p>loading...</p>,
         loader: ({ params }) =>
@@ -94,7 +104,7 @@ export const router = createBrowserRouter([
           <PrivateRoute>
             <UpdateTask></UpdateTask>
           </PrivateRoute>
-        ),
+        )
       },
     ],
   },

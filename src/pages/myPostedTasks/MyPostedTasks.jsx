@@ -2,7 +2,7 @@ import React, { use, useEffect, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { MdDelete, MdEdit } from "react-icons/md";
 import { BiDialpad } from "react-icons/bi";
-import { Link } from "react-router";
+import { Link, Links } from "react-router";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 
@@ -84,9 +84,9 @@ const MyPostedTasks = () => {
                   <td className="font-bold text-[16px] border">{post.date}</td>
                   <td className="border">
                     <div className="join join-vertical lg:join-horizontal">
-                      <button className="btn join-item">
+                      <Link to={`/bids/${post._id}`}><button className="btn join-item">
                         <BiDialpad size={24} />
-                      </button>
+                      </button></Link>
                       <Link to={`/updateTask/${post._id}`}>
                         <button className="btn join-item">
                           <MdEdit size={24} />
