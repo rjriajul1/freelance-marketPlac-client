@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 const TaskDetails = () => {
   const task = useLoaderData();
-  const {title,name,email,description,skill,date,budget,_id} = task || {}
+  const {title,name,email,description,skill,date,budget,bids:taskBid} = task || {}
  
   const [bids,setBids] = useState(0)
 
@@ -14,7 +14,7 @@ const TaskDetails = () => {
    
     const newBids = bids + 1;
     setBids(newBids)
-    
+
        fetch(`https://freelance-task-marketplace-server-omega.vercel.app/tasks/${email}`,{
          method: 'PATCH',
          headers: {
@@ -33,7 +33,7 @@ const TaskDetails = () => {
 
   return (
     <div className="mt-3">
-      <p className="text-center  mb-10">You bid for {bids} opportunities</p>
+      <p className="text-center  mb-10">You bid for {taskBid} opportunities</p>
       <div className="card border-2  border-red-500 mx-auto  w-11/12  md:w-3/6">
       <Helmet>
         <title>freelance MarketPlace || TaskDetails {task._id}</title>

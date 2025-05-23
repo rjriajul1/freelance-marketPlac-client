@@ -3,7 +3,7 @@
 .dark-theme{
     --main-heading: #5f99be;
     --para-clr: #fff;
-    --btn-bg-color: #5f99be;
+    --btn-bg-color: #c6d3dd;
     --btn-text-clr: #fff;
     --bg-clr: #111b20;
 }
@@ -12,7 +12,7 @@
     --main-heading: #5f99be;
     --para-clr: #333;
     --btn-bg-color: #111b20;
-    --btn-text-clr: #fff;
+    --btn-text-clr: #f5eeee;
     --bg-clr: #fff;
 }
 
