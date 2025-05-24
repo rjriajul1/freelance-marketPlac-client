@@ -33,7 +33,7 @@ const TaskDetails = () => {
 
   return (
     <div className="mt-3">
-      <p className="text-center  mb-10">You bid for {bids} opportunities</p>
+      <p className="text-center  mb-10">You bid for {bids || 0} opportunities</p>
       <div className="card border-2  border-red-500 mx-auto  w-11/12  md:w-3/6">
       <Helmet>
         <title>freelance MarketPlace || TaskDetails {task._id}</title>
