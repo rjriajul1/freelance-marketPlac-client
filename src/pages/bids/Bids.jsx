@@ -10,7 +10,7 @@ const Bids = () => {
             <div></div>
             <div className='border mr-5 w-44 p-6 bg-green-500'>
                  
-                  <p className='text-xl'> bids: {task.bids}</p>
+                  <p className='text-xl'> bids: {task.bids || 0}</p>
                   <button className='btn mt-4' onClick={()=>navigate(-1)}>Go To Back</button>
             </div>
         </div>
