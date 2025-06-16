@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react';
+import React, { use, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../contexts/AuthContext';
 import { FcGoogle } from 'react-icons/fc';
@@ -8,10 +8,11 @@ import { IoIosEyeOff } from 'react-icons/io';
 import { FaRegEye } from 'react-icons/fa';
 
 const Login = () => {
-    const {login,googleLogin} = use(AuthContext);
+    const {login,googleLogin,resetPassword} = use(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     const [showPass, setShowPass ] = useState(false);
+    const useRefEmail = useRef(null)
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -40,6 +41,16 @@ const Login = () => {
         toast.error(error.message);
       })
     }
+    const handleResetPass = () => {
+      const email = useRefEmail.current.value;
+      resetPassword(email)
+      .then(res=> {
+        alert('please check you email and resetPassword')
+      })
+      .catch(error=> {
+        toast.error(error.message)
+      })
+    }
     return (
        <div className="card  w-full mx-auto  mt-10 max-w-lg shrink-0 shadow-2xl">
         <Helmet>
@@ -53,14 +64,18 @@ const Login = () => {
            
             {/* email */}
           <label className="label">Email</label>
-          <input type="email" name='email' className="p-2 border w-full" placeholder="Email" />
+          <input type="email" ref={useRefEmail} name='email' className="p-2 border w-full" placeholder="Email" required />
          
           {/* password */}
           <label className="label">Password</label>
          <div className='relative'>
-           <input type={showPass ? 'text' : 'password'} name='password' className="p-2 border w-full" placeholder="Password" />
+           <input type={showPass ? 'text' : 'password'} name='password' className="p-2 border w-full" placeholder="Password"  />
            <div onClick={()=> setShowPass(!showPass)} className='absolute top-2 right-4'>
              {showPass ? <IoIosEyeOff size={20} /> : <FaRegEye size={20} />}
+           </div>
+           <div className='flex justify-between mt-2'>
+            <div></div>
+            <button onClick={handleResetPass} className='cursor-pointer hover:text-blue-500 hover:underline'>Forget password</button>
            </div>
          </div>
 
