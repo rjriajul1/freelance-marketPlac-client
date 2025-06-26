@@ -38,7 +38,7 @@ const TaskDetails = () => {
       <Helmet>
         <title>freelance MarketPlace || TaskDetails {task._id}</title>
       </Helmet>
-        <div className=" browse-task card-body ">
+        <div className="  card-body ">
             <h1 className="text-xl font-bold">{name}</h1>
           <h2 className="card-title">{title}</h2>
           <p className="font-bold">{date}</p>

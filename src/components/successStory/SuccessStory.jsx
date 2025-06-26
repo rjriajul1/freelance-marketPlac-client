@@ -12,7 +12,7 @@ const SuccessStory = () => {
    
     return (
 
-       <div className='success-section mt-2'>
+       <div className=' mt-2'>
          <div className='max-w-7xl mx-auto py-6'>
 
              <h1 className='text-3xl font-bold'>Success Story</h1>

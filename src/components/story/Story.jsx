@@ -4,7 +4,7 @@ const Story = ({ story }) => {
   
   return (
     <div>
-      <section className="success-card">
+      <section className="">
             <div className="h-72 p-6 rounded-2xl border">
               <p className="text-sm mb-1">
                 Project: <strong>{story.project}</strong>

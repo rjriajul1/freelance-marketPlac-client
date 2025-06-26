@@ -12,7 +12,7 @@ const Home = () => {
     
   
     return (
-        <div>
+        <div className='max-w-[1600px] mx-auto'>
             <Helmet>
                 <title>freelance MarketPlace || Home</title>
             </Helmet>

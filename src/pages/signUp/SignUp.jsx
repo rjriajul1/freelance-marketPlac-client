@@ -8,7 +8,8 @@ import { FaRegEye } from "react-icons/fa";
 import { IoIosEyeOff } from "react-icons/io";
 
 const SignUp = () => {
-  const { signUp, profileUpdate, googleLogin, emailVerify } = use(AuthContext);
+  const { signUp, profileUpdate, googleLogin, emailVerify, } =
+    use(AuthContext);
   const navigate = useNavigate();
   const [showPass, setShowPass] = useState(false);
 
@@ -42,14 +43,13 @@ const SignUp = () => {
         // user email verification
         emailVerify()
           .then((res) => {
-            console.log(res);  
+            console.log(res);
           })
           .catch((error) => {
             toast.error(error.message);
           });
-        navigate("/");
-        toast.success("your successfully Sing Up");
-
+          navigate("/");
+          toast.success("your successfully Sing Up");
         // user profile update
         const userProfileData = {
           displayName: name,

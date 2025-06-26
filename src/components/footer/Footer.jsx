@@ -1,15 +1,15 @@
 import React from "react";
-import logo from "../../assets/logo.webp";
+import logo from "../../assets/logo.png";
 import { FaFacebook, FaGithub } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io";
 
 const Footer = () => {
   return (
-    <div className="footer-color mt-2">
+    <div className=" mt-2">
       <footer className="footer grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 p-10 max-w-7xl mx-auto">
         <aside>
           <img
-            className="w-20 rounded-full h-20 object-cover"
+            className="w-40 h-40 "
             src={logo}
             alt=""
           />

@@ -40,7 +40,7 @@ const AddTask = () => {
   };
 
   return (
-    <div className="add-task">
+    <div className="">
       <Helmet>
         <title>freelance MarketPlace || Add Task</title>
       </Helmet>
@@ -63,7 +63,7 @@ const AddTask = () => {
               {/* category */}
               <label className="label text-xl font-bold">category</label>
               <select
-                className="p-2 add-task font-bold w-full border border-gray-300 rounded-md  "
+                className="p-2  font-bold w-full border border-gray-300 rounded-md  "
                 name="skill"
                 id="jobs"
               >

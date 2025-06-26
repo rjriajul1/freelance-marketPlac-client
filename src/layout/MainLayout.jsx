@@ -7,11 +7,11 @@ const MainLayout = () => {
   const navigation = useNavigation();
   const isNavigating = Boolean(navigation.location);
   return (
-    <div>
+    <div className="bg-accent">
      <div className="sticky top-0 z-10">
        <Navbar></Navbar>
      </div>
-      <div className=" min-h-[calc(100vh-412px)] browse-task">
+      <div className=" min-h-[calc(100vh-412px)]">
         {isNavigating && (
           <div>
             <span className="loading loading-spinner loading-xs"></span>

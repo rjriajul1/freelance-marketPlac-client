@@ -62,7 +62,7 @@ const UpdateTask = () => {
             <label className="label text-xl font-bold">category</label>
             <select
             defaultValue={task.skill}
-              className="p-2 font-bold w-full border browse-task border-gray-300 rounded-md  "
+              className="p-2 font-bold w-full border  border-gray-300 rounded-md  "
               name="skill"
               id="jobs"
             >

@@ -3,56 +3,25 @@ import carousel1 from "../../assets/slider_1.jpg";
 import carousel2 from "../../assets/slider_2.jpg";
 import carousel3 from "../../assets/slider_3.jpg";
 import carousel4 from "../../assets/slider_4.jpg";
-
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 const Banner = () => {
   return (
-    <div className="banner">
-      <div className="carousel w-full my-4 h-96 border-5">
-      <div id="slide1" className="carousel-item relative w-full ">
-        <img src={carousel1} className=" w-full" />
-        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-          <a href="#slide4" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide2" className="btn btn-circle">
-            ❯
-          </a>
+    <div className="mt-8">
+      <Carousel autoPlay={true} showThumbs={false} infiniteLoop={true}>
+        <div className="">
+          <img className="h-[400px] lg:h-[600px] object-cover w-11/12 mx-auto rounded-2xl" src={carousel1} />
         </div>
-      </div>
-      <div id="slide2" className="carousel-item relative w-full">
-        <img src={carousel2} className="w-full " />
-        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-          <a href="#slide1" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide3" className="btn btn-circle">
-            ❯
-          </a>
+        <div>
+          <img className="h-[400px] lg:h-[600px] w-11/12 mx-auto object-cover rounded-2xl " src={carousel2} />
         </div>
-      </div>
-      <div id="slide3" className="carousel-item relative w-full">
-        <img src={carousel3} className="w-full " />
-        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-          <a href="#slide2" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide4" className="btn btn-circle">
-            ❯
-          </a>
+        <div>
+          <img className="h-[400px] lg:h-[600px] w-11/12 mx-auto object-cover rounded-2xl" src={carousel3} />
         </div>
-      </div>
-      <div id="slide4" className="carousel-item relative w-full">
-        <img src={carousel4} className="w-full" />
-        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-          <a href="#slide3" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide1" className="btn btn-circle">
-            ❯
-          </a>
+        <div>
+          <img className="h-[400px] lg:h-[600px] w-11/12 mx-auto object-cover rounded-2xl" src={carousel4} />
         </div>
-      </div>
-    </div>
+      </Carousel>
     </div>
   );
 };

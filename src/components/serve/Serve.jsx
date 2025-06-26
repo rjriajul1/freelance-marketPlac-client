@@ -8,7 +8,7 @@ const Serve = ({ serve }) => {
     
   // })
   return (
-    <div className="service-card">
+    <div className="">
       <section className="my-6">
         <div className=" p-6 rounded-2xl shadow-sm border hover:shadow-md transition duration-200 h-52">
           <h3 className="text-xl font-semibold ">{serve.title}</h3>

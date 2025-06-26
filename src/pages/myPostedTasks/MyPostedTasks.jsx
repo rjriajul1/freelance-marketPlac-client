@@ -66,7 +66,7 @@ const MyPostedTasks = () => {
           <table className="table">
             {/* head */}
             <thead className="text-xl">
-              <tr className="browse-task">
+              <tr className="">
                 <th className="border">No</th>
                 <th className="border">Category</th>
                 <th className="border">title</th>

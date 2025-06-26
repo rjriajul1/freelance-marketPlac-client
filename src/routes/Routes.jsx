@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router";
 import MainLayout from "../layout/MainLayout";
 import Home from "../pages/home/Home";
 import AddTask from "../pages/addTask/AddTask";
-import BrowseTasks from "../pages/browseTasks/BrowseTasks";
 import MyPostedTasks from "../pages/myPostedTasks/MyPostedTasks";
 import Login from "../pages/login/Login";
 import SignUp from "../pages/signUp/SignUp";
@@ -13,7 +12,9 @@ import UpdateTask from "../pages/updateTask/UpdateTask";
 import Error from "../error/Error";
 import Navbar from "../components/header/Navbar";
 import Bids from "../pages/bids/Bids";
-
+import AllItems from "../pages/AllItems/AllItems";
+import DashboardLayout from "../layout/DashboardLayout";
+import About from "../pages/aboutUs/AboutUs";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -35,29 +36,17 @@ export const router = createBrowserRouter([
         Component: Home,
       },
       {
-        path: "addTask",
-        element: (
-          <PrivateRoute>
-            <AddTask></AddTask>
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "browseTasks",
+        path: "allItems",
         hydrateFallbackElement: <p>loading...</p>,
         loader: () =>
           fetch(
             "https://freelance-task-marketplace-server-omega.vercel.app/allTasks"
           ),
-        Component: BrowseTasks,
+        Component: AllItems,
       },
       {
-        path: "myPostedTasks",
-        element: (
-          <PrivateRoute>
-            <MyPostedTasks></MyPostedTasks>
-          </PrivateRoute>
-        ),
+        path: "aboutUs",
+        Component: About,
       },
       {
         path: "login",
@@ -72,13 +61,13 @@ export const router = createBrowserRouter([
         Component: Profile,
       },
       {
-        path: 'bids/:id',
+        path: "bids/:id",
         hydrateFallbackElement: <p>loading...</p>,
-        loader: ({params}) =>
+        loader: ({ params }) =>
           fetch(
             `https://freelance-task-marketplace-server-omega.vercel.app/allTasks/${params.id}`
           ),
-        Component: Bids
+        Component: Bids,
       },
       {
         path: "taskDetails/:id",
@@ -104,7 +93,33 @@ export const router = createBrowserRouter([
           <PrivateRoute>
             <UpdateTask></UpdateTask>
           </PrivateRoute>
-        )
+        ),
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        path: "/dashboard/addTask",
+        element: (
+          <PrivateRoute>
+            <AddTask></AddTask>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/myPostedTasks",
+        element: (
+          <PrivateRoute>
+            <MyPostedTasks></MyPostedTasks>
+          </PrivateRoute>
+        ),
       },
     ],
   },

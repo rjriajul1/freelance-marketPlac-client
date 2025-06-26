@@ -39,8 +39,10 @@ const Login = () => {
         if (!user?.emailVerified) {
           return alert("please check your email and verified you email");
         }
-        navigate(location?.state || "/");
-        toast.success("your login successfully now !");
+        if(user){
+          navigate(location?.state || "/");
+          toast.success("your login successfully now !");
+        }
       })
       .catch((error) => {
         toast.error(error.message);
