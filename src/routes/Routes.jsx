@@ -77,9 +77,7 @@ export const router = createBrowserRouter([
             `https://freelance-task-marketplace-server-omega.vercel.app/allTasks/${params.id}`
           ),
         element: (
-          <PrivateRoute>
             <TaskDetails></TaskDetails>
-          </PrivateRoute>
         ),
       },
       {

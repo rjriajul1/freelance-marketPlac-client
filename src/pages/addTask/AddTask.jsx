@@ -54,7 +54,7 @@ const AddTask = () => {
               <input
                 type="text"
                 name="title"
-                className=" p-2 border w-full"
+                className=" p-2 border text-xl w-full"
                 placeholder="title"
               />
             </fieldset>
@@ -79,7 +79,7 @@ const AddTask = () => {
               <input
                 type="text"
                 name="description"
-                className="p-2 border w-full"
+                className="p-2 border text-xl w-full"
                 placeholder="description"
               />
             </fieldset>
@@ -89,7 +89,7 @@ const AddTask = () => {
    
    
               <label className="label text-xl font-bold">deadline</label>
-                <input type="date" name="date" className="p-2 border w-full" />
+                <input type="date" name="date" className="p-2 border text-xl w-full" />
             </fieldset>
 
             <fieldset className="fieldset  border-base-300 rounded-box w-full border p-4">
@@ -98,7 +98,7 @@ const AddTask = () => {
               <input
                 type="number"
                 name="budget"
-                className="p-2 border w-full"
+                className="p-2 border text-xl w-full"
                 placeholder="budget"
               />
             </fieldset>
@@ -110,7 +110,7 @@ const AddTask = () => {
                 type="email"
                 name="email"
                 value={user.email}
-                className="p-2 border w-full"
+                className="p-2 text-xl border w-full"
                 placeholder="email"
               />
             </fieldset>
@@ -122,12 +122,12 @@ const AddTask = () => {
                 type="text"
                 name="name"
                 value={user.displayName}
-                className="p-2 border w-full"
+                className="p-2 border text-xl w-full"
                 placeholder="name"
               />
             </fieldset>
           </div>
-          <button type="submit" className=" btn w-full my-6 text-xl font-bold">
+          <button type="submit" className=" btn w-full my-6 text-xl bg-primary text-white font-bold">
             add Task
           </button>
         </form>

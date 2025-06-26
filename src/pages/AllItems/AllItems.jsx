@@ -1,45 +1,27 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router";
+import Task from "../../components/task/Task";
 
 const AllItems = () => {
   const allTasks = useLoaderData();
 
   return (
-    <div className="">
-      <Helmet>
-        <title>freelance MarketPlace || Browser Tasks</title>
-      </Helmet>
-      <h1 className="text-3xl font-bold text-red-500 text-center my-6">
-        All Tasks Post here so at a glance
-      </h1>
-      <div>
-        <div className="overflow-x-auto my-6">
-          <table className="table table-xs">
-            <thead className="text-xl border">
-              <tr className="">
-                <th className="border">No</th>
-                <th className="border">Category</th>
-                <th className="border">title</th>
-                <th className="border">Date</th>
-                <th className="border">Action</th>
-              </tr>
-            </thead>
-            <tbody className="font-bold  ">
-              {allTasks.map((task, index) => (
-                <tr key={task._id}>
-                  <th className="border">{index + 1}</th>
-                  <td className="md:text-[18px] border">{task.skill}</td>
-                  <td className="md:text-[18px] border">{task.title}</td>
-                  <td className="md:text-[18px] border">{task.date}</td>
-                  <td className="md:text-[18px] border">
-                    <Link to={`/taskDetails/${task._id}`}><button className="btn btn-xs md:btn-md">See Details</button></Link>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+    <div className="py-6">
+      <div className="text-center my-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-primary">
+          Browse All Tasks
+        </h2>
+        <p className="text-gray-500 mt-2 text-sm md:text-base max-w-xl mx-auto">
+          Discover a variety of freelance tasks posted by clients around the
+          world. Find your next opportunity and start working today.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-2">
+        {allTasks.map((task) => (
+          <Task key={task._id} task={task}></Task>
+        ))}
       </div>
     </div>
   );

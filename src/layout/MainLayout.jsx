@@ -11,7 +11,7 @@ const MainLayout = () => {
      <div className="sticky top-0 z-10">
        <Navbar></Navbar>
      </div>
-      <div className=" min-h-[calc(100vh-412px)]">
+      <div className=" max-w-[1600px] mx-auto min-h-[calc(100vh-412px)]">
         {isNavigating && (
           <div>
             <span className="loading loading-spinner loading-xs"></span>
