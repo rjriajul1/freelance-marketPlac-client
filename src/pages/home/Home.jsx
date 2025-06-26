@@ -6,6 +6,8 @@ import FeaturedTasks from '../../components/featuredTasks/FeaturedTasks';
 import SuccessStory from '../../components/successStory/SuccessStory';
 import Services from '../../components/services/Services';
 import { Helmet } from 'react-helmet-async';
+import CallToAction from '../../components/callToAction/CallToAction';
+import Blog from '../../components/blog/blog';
 const Home = () => {
 
     const tasksData = useLoaderData();
@@ -20,6 +22,8 @@ const Home = () => {
             <FeaturedTasks tasksData={tasksData}/>
             <SuccessStory/>
             <Services/>
+            <CallToAction></CallToAction>
+            <Blog></Blog>
           
         </div>
     );
