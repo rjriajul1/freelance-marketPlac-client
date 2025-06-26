@@ -4,7 +4,7 @@ import Task from "../task/Task";
 const FeaturedTasks = ({ tasksData }) => {
   return (
     <div>
-      <div className=" py-6">
+      <div id="featured" className=" py-6">
         <div className="text-center my-10">
           <h2 className="text-3xl md:text-4xl font-bold text-primary">
             🔥 Featured Tasks

@@ -11,7 +11,7 @@ const Services = () => {
 
   return (
     <div>
-      <div className="py-6">
+      <div id="service" className="py-6">
         <div className="text-center my-10">
           <h2 className="text-3xl md:text-4xl font-bold text-primary">
             🌟 Top Rated Services

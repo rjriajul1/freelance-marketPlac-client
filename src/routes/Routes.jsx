@@ -15,6 +15,8 @@ import Bids from "../pages/bids/Bids";
 import AllItems from "../pages/AllItems/AllItems";
 import DashboardLayout from "../layout/DashboardLayout";
 import About from "../pages/aboutUs/AboutUs";
+import PrivacyPolicy from "../components/privacyPolicy/PrivacyPolicy";
+import ContactUs from "../components/contactUs/ContactUs";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -47,6 +49,14 @@ export const router = createBrowserRouter([
       {
         path: "aboutUs",
         Component: About,
+      },
+      {
+        path: "contactUs",
+        Component: ContactUs,
+      },
+      {
+        path: "privacyPolicy",
+        Component: PrivacyPolicy,
       },
       {
         path: "login",

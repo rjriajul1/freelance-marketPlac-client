@@ -8,21 +8,23 @@ import Services from '../../components/services/Services';
 import { Helmet } from 'react-helmet-async';
 import CallToAction from '../../components/callToAction/CallToAction';
 import Blog from '../../components/blog/blog';
+import Promotional from '../../components/promotional/Promotional';
 const Home = () => {
 
     const tasksData = useLoaderData();
     
   
     return (
-        <div className='max-w-[1600px] mx-auto'>
+        <div className=''>
             <Helmet>
                 <title>freelance MarketPlace || Home</title>
             </Helmet>
             <Banner/>
             <FeaturedTasks tasksData={tasksData}/>
-            <SuccessStory/>
-            <Services/>
             <CallToAction></CallToAction>
+            <SuccessStory/>
+            <Promotional></Promotional>
+            <Services/>
             <Blog></Blog>
           
         </div>

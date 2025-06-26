@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, NavLink, Outlet } from "react-router";
-import Logo from "../components/logo/Logo";
+import logo from "../assets/logo.png";
 
 const DashboardLayout = () => {
   return (
@@ -43,9 +43,18 @@ const DashboardLayout = () => {
           ></label>
           <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
             <div>
-                <Link to="/">
-                <Logo></Logo>
-                </Link>
+              <Link to="/">
+                <div className="flex items-center gap-2">
+                  <img
+                    src={logo}
+                    alt="Logo"
+                    className="w-10 h-10 object-contain"
+                  />
+                  <h2 className="text-2xl font-bold text-primary">
+                    FreelanceHub
+                  </h2>
+                </div>
+              </Link>
             </div>
 
             <li>

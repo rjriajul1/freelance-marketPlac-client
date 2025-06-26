@@ -32,14 +32,24 @@ const Navbar = () => {
           About Us
         </NavLink>
       </li>
-     {user &&  <li>
+      <li>
         <NavLink
           className={({ isActive }) => (isActive ? " underline" : "")}
-          to="/dashboard"
+          to="/contactUs"
         >
-          Dashboard
+          Contact Us
         </NavLink>
-      </li>}
+      </li>
+      {user && (
+        <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? " underline" : "")}
+            to="/dashboard"
+          >
+            Dashboard
+          </NavLink>
+        </li>
+      )}
       {user ? (
         ""
       ) : (
@@ -70,7 +80,6 @@ const Navbar = () => {
         <div className="navbar-start p-3">
           <div className="dropdown">
             <div
-              
               tabIndex={0}
               role="button"
               className=" mr-3 lg:hidden  rounded-md cursor-pointer"
@@ -99,15 +108,9 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="flex items-center gap-4">
-            <div>
-              <img
-                className="w-20 h-20 object-cover rounded-full"
-                src={logo}
-                alt=""
-              />
-            </div>
-            <div>
-              <p className="text-2xl font-bold  text-green-500">MarketPlace</p>
+            <div className="flex items-center gap-2">
+              <img src={logo} alt="Logo" className="w-10 h-10 object-contain" />
+              <h2 className="text-2xl font-bold text-secondary">FreelanceHub</h2>
             </div>
           </div>
         </div>
