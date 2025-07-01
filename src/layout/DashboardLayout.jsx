@@ -1,8 +1,16 @@
-import React from "react";
-import { Link, NavLink, Outlet } from "react-router";
+import React, { use } from "react";
+import { Link, NavLink, Outlet, useNavigate } from "react-router";
 import logo from "../assets/logo.png";
+import { AuthContext } from "../contexts/AuthContext";
+import { IoIosLogOut, IoMdSettings } from "react-icons/io";
 
 const DashboardLayout = () => {
+    const navigate = useNavigate();
+  const { userSignOut } = use(AuthContext);
+  const handleSignOut = () => {
+    userSignOut();
+    navigate("/");
+  };
   return (
     <div className="max-w-[1600px] mx-auto ">
       <div className="drawer lg:drawer-open">
@@ -33,7 +41,9 @@ const DashboardLayout = () => {
             </div>
             <div className="mx-2 flex-1 px-2">Navbar Title</div>
           </div>
-          <Outlet></Outlet>
+          <div className="w-11/12 mx-auto">
+            <Outlet></Outlet>
+          </div>
         </div>
         <div className="drawer-side">
           <label
@@ -41,39 +51,73 @@ const DashboardLayout = () => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+          <ul className="menu bg-primary text-white min-h-full w-80 p-4">
             <div>
               <Link to="/">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center pb-6 pt-2 gap-2">
                   <img
                     src={logo}
                     alt="Logo"
                     className="w-10 h-10 object-contain"
                   />
-                  <h2 className="text-2xl font-bold text-primary">
+                  <h2 className="text-2xl font-bold text-secondary">
                     FreelanceHub
                   </h2>
                 </div>
               </Link>
             </div>
+            <div className="">
+            <div className="relative">
+                <li>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "underline  text-xl" : "text-xl"
+                  }
+                  to="/dashboard/myPostedTasks"
+                >
+                  My Posted Tasks
+                </NavLink>
+              </li>
 
-            <li>
-              <NavLink
-                className={({ isActive }) => (isActive ? " underline" : "")}
-                to="/dashboard/myPostedTasks"
-              >
-                My Posted Tasks
-              </NavLink>
-            </li>
-
-            <li>
-              <NavLink
-                className={({ isActive }) => (isActive ? "underline" : "")}
-                to="/dashboard/addTask"
-              >
-                Add Task
-              </NavLink>
-            </li>
+              <li>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "underline text-xl " : "text-xl"
+                  }
+                  to="/dashboard/addTask"
+                >
+                  Add Task
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? " underline text-xl " : "text-xl"
+                  }
+                  to="/allItems"
+                >
+                  All Items
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? " text-xl " : "text-xl"
+                  }
+                  to="/dashboard"
+                >
+                  Statistics
+                </NavLink>
+              </li>
+            </div>
+            <div className="absolute bottom-25 flex flex-col gap-3">
+              <Link className="flex items-center gap-2" to="/profile"><span><IoMdSettings size={24} color="black" /></span><button className="text-xl cursor-pointer">Profile</button></Link>
+              <div className="flex items-center gap-2">
+                 <span><IoIosLogOut size={24} color="black" /></span>
+                <button onClick={handleSignOut} className="text-xl cursor-pointer">Logout</button>
+              </div>
+            </div>
+            </div>
           </ul>
         </div>
       </div>

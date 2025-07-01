@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 const UpdateTask = () => {
   const task = useLoaderData();
- 
+
   const [startDate, setStartDate] = useState(new Date());
 
   const handleUpdateForm = (e) => {
@@ -16,13 +16,16 @@ const UpdateTask = () => {
     const updateData = Object.fromEntries(formDate.entries());
 
     // update task form db
-    fetch(`https://freelance-task-marketplace-server-omega.vercel.app/myPosted/${task.email}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updateData),
-    })
+    fetch(
+      `https://freelance-task-marketplace-server-omega.vercel.app/myPosted/${task.email}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updateData),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.matchedCount) {
@@ -42,7 +45,16 @@ const UpdateTask = () => {
       <Helmet>
         <title>freelance MarketPlace || Update {task._id}</title>
       </Helmet>
-      <h1 className="text-center font-bold text-2xl my-4">Update Task</h1>
+      <div className="text-center my-10">
+        <h2 className="text-3xl md:text-4xl font-bold text-primary">
+          ✏️ Update Your Task
+        </h2>
+        <p className="text-gray-500 mt-2 max-w-xl mx-auto">
+          Make changes to your task details, adjust the budget, or refine the
+          description to attract the right freelancers.
+        </p>
+      </div>
+
       <form onSubmit={handleUpdateForm}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <fieldset className="fieldset  border-base-300 rounded-box w-full border p-4">
@@ -61,7 +73,7 @@ const UpdateTask = () => {
             {/* category */}
             <label className="label text-xl font-bold">category</label>
             <select
-            defaultValue={task.skill}
+              defaultValue={task.skill}
               className="p-2 font-bold w-full border  border-gray-300 rounded-md  "
               name="skill"
               id="jobs"
@@ -87,7 +99,6 @@ const UpdateTask = () => {
           <fieldset className="fieldset border-base-300 rounded-box w-full border p-4">
             {/* deadline */}
             <label className="label text-xl font-bold">deadline</label>
-
 
             <div className="w-full border border-gray-300 p-1 rounded-md ">
               <DatePicker

@@ -11,7 +11,9 @@ const MyPostedTasks = () => {
   const { user } = use(AuthContext);
 
   useEffect(() => {
-    fetch(`https://freelance-task-marketplace-server-omega.vercel.app/myPosted/${user.email}`)
+    fetch(
+      `https://freelance-task-marketplace-server-omega.vercel.app/myPosted/${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setPosts(data);
@@ -29,27 +31,26 @@ const MyPostedTasks = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-
-        fetch(`https://freelance-task-marketplace-server-omega.vercel.app/myPosted/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-
-        if (data.deletedCount) {
-          const remaingTask = posts.filter((task) => task._id !== id);
-          setPosts(remaingTask);
-          Swal.fire({
-          title: "Deleted!",
-          text: "Your post has been deleted.",
-          icon: "success",
-        });
-        }
-      });
-        
+        fetch(
+          `https://freelance-task-marketplace-server-omega.vercel.app/myPosted/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount) {
+              const remaingTask = posts.filter((task) => task._id !== id);
+              setPosts(remaingTask);
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your post has been deleted.",
+                icon: "success",
+              });
+            }
+          });
       }
     });
-    
   };
 
   return (
@@ -57,9 +58,15 @@ const MyPostedTasks = () => {
       <Helmet>
         <title>freelance MarketPlace || My Posted Tasks</title>
       </Helmet>
-      <h1 className="text-3xl font-bold text-center my-6">
-        My posted Tasks: {posts.length}
-      </h1>
+      <div className="text-center my-10">
+        <h2 className="text-3xl md:text-4xl font-bold text-primary">
+          📝 My Posted Tasks : {posts.length}
+        </h2>
+        <p className="text-gray-500 mt-2 max-w-xl mx-auto">
+          View and manage all the tasks you’ve posted. Track progress, review
+          bids, and update your projects anytime.
+        </p>
+      </div>
 
       <div>
         <div className="overflow-x-auto">
@@ -84,9 +91,11 @@ const MyPostedTasks = () => {
                   <td className="font-bold text-[16px] border">{post.date}</td>
                   <td className="border">
                     <div className="join join-vertical lg:join-horizontal">
-                      <Link to={`/bids/${post._id}`}><button className="btn join-item">
-                        <BiDialpad size={24} />
-                      </button></Link>
+                      <Link to={`/bids/${post._id}`}>
+                        <button className="btn join-item">
+                          <BiDialpad size={24} />
+                        </button>
+                      </Link>
                       <Link to={`/updateTask/${post._id}`}>
                         <button className="btn join-item">
                           <MdEdit size={24} />

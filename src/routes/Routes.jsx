@@ -17,6 +17,7 @@ import DashboardLayout from "../layout/DashboardLayout";
 import About from "../pages/aboutUs/AboutUs";
 import PrivacyPolicy from "../components/privacyPolicy/PrivacyPolicy";
 import ContactUs from "../components/contactUs/ContactUs";
+import Statistics from "../pages/statistics/Statistics";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -113,6 +114,10 @@ export const router = createBrowserRouter([
       </PrivateRoute>
     ),
     children: [
+      {
+       index:true,
+       Component:Statistics
+      },
       {
         path: "/dashboard/addTask",
         element: (

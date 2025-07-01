@@ -45,24 +45,6 @@
     "rating": 4.7
   },
   {
-    "id": 6,
-    "client": "PixelFrame Studios",
-    "freelancer": "Omar Reza",
-    "project": "Video Editing & Post-Production",
-    "quote": "Omar’s editing skills are top-tier. The final product looked like something from a pro studio.",
-    "result": "Video reached 100K+ views in first week",
-    "rating": 4.9
-  },
-  {
-    "id": 7,
-    "client": "GreenGrow Farm Co.",
-    "freelancer": "Lina Park",
-    "project": "Custom WordPress Website",
-    "quote": "Lina was super responsive and delivered a site that’s fast and easy to update. Highly recommend!",
-    "result": "Website bounce rate dropped by 35%",
-    "rating": 5
-  },
-  {
     "id": 8,
     "client": "David Chen",
     "freelancer": "Ali Hassan",

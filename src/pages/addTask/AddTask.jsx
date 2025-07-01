@@ -1,4 +1,4 @@
-import React, { use} from "react";
+import React, { use } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -45,7 +45,16 @@ const AddTask = () => {
         <title>freelance MarketPlace || Add Task</title>
       </Helmet>
       <div className="max-w-7xl mx-auto rounded-2xl p-6 my-4">
-        <h1 className="text-center font-bold text-2xl my-4">Add Task</h1>
+        <div className="text-center my-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary">
+            🚀 Post a New Task
+          </h2>
+          <p className="text-gray-500 mt-2 max-w-xl mx-auto">
+            Describe your project and connect with skilled freelancers ready to
+            help you succeed. Posting a task is quick and easy!
+          </p>
+        </div>
+
         <form onSubmit={handleFormAddTasks}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <fieldset className="fieldset border-base-300 rounded-box w-full border p-4">
@@ -86,10 +95,13 @@ const AddTask = () => {
 
             <fieldset className="fieldset  border-base-300 rounded-box w-full border p-4">
               {/* deadline */}
-   
-   
+
               <label className="label text-xl font-bold">deadline</label>
-                <input type="date" name="date" className="p-2 border text-xl w-full" />
+              <input
+                type="date"
+                name="date"
+                className="p-2 border text-xl w-full"
+              />
             </fieldset>
 
             <fieldset className="fieldset  border-base-300 rounded-box w-full border p-4">
@@ -127,7 +139,10 @@ const AddTask = () => {
               />
             </fieldset>
           </div>
-          <button type="submit" className=" btn w-full my-6 text-xl bg-primary text-white font-bold">
+          <button
+            type="submit"
+            className=" btn w-full my-6 text-xl bg-primary text-white font-bold"
+          >
             add Task
           </button>
         </form>
